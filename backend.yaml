@@ -12,4 +12,8 @@
     ansible.builtin.dnf:
       name: nodejs 
       state: latest
-          
+
+  - name: useradd
+    ansible.builtin.user:
+      name: expense
+
