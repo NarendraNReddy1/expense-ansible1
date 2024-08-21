@@ -32,6 +32,12 @@
     args:
       chdir: /app
 
+  - name: service
+    ansible.builtin.file:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
+      
+
 
 
 
