@@ -1,0 +1,8 @@
+- name: db configuration
+  hosts: db
+  become: yes 
+  tasks:
+  - name: db
+    ansible.builtin.dnf:
+      name: mysql-server
+      state: latest
