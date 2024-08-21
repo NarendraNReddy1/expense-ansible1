@@ -16,7 +16,7 @@
       name: mysqld
       state: started
       enabled: yes
-      
+
   - name: install python mysql depenencies
     ansible.builtin.pip:
       name:
@@ -32,6 +32,14 @@
       filter: version    
     ignore_errors: yes 
     register: mysql_connection_output
+
+  - name: print mysql connection
+    ansible.builtin.debug:
+      msg: "{{mysql_connection_output}}"
+
+  # - name: set password
+  #   ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysql_root_password}}"
+  #   when: mysql_connection_output
 
 
 
