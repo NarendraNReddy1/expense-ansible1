@@ -33,10 +33,10 @@
       chdir: /app
 
   - name: service
-    ansible.builtin.file:
+    ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
-      
+
 
 
 
