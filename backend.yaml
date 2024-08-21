@@ -30,7 +30,7 @@
   - name: move to app
     ansible.builtin.command: "npm install"
     args:
-      chdir: app/
+      chdir: /app
 
 
   - name: npm install
