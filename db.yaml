@@ -16,7 +16,7 @@
       name: mysqld
       state: started
       enabled: yes
-
+   
   - name: checking password set or not
     community.mysql.mysql_info:
       login_user: root
@@ -26,5 +26,5 @@
     ignore_erros: yes
     register: mysql_connection_output
 
-    
+
 
