@@ -2,7 +2,7 @@
   hosts: db
   become: yes
   vars:
-    login_password: ExpenseApp@1
+    mysql_root_password: ExpenseApp@1
     login_host: db.narendra.shop
   tasks:
   - name: install mysql-server
