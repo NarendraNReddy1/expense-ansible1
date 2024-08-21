@@ -33,7 +33,14 @@
     ansible.builtin.copy:
       src: expense.conf
       dest: /etc/nginx/default.d/expense.conf
-      
+
+  - name: restart
+    ansible.builtin.service:
+      name: backend
+      state: restarted
+      enabled: yes 
+
+
 
 
 
