@@ -21,7 +21,7 @@
   - name: html addition
     ansible.builtin.file:
       path: /usr/share/nginx/html
-      state: present
+      state: directory
 
 
 
