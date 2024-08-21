@@ -1,6 +1,10 @@
 - name: db configuration
   hosts: db
   become: yes 
+  vars:
+    mysql_root_password: ExpenseApp@1
+    login_host: db.narendra.shop
+
   tasks:
   - name: db
     ansible.builtin.dnf:
@@ -12,3 +16,15 @@
       name: mysqld
       state: started
       enabled: yes
+
+  - name: checking password set or not
+    community.mysql.mysql_info:
+      login_user: root
+      login_host: "{{login_host}}"
+      login_password: "{{mysql_root_password}}"
+      filter: version
+    ignore_erros: yes
+    register: mysql_connection_output
+
+    
+
