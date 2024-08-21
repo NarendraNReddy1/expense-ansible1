@@ -62,6 +62,12 @@
       name: backend
       state: reloaded
 
+  # - name: restart and enable
+  #   ansible.builtin.system:
+  #     name: backend
+  #     state: started
+  #     enabled: yes
+
   - name: restart and enable
     ansible.builtin.system:
       name: backend
